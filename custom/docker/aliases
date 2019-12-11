@@ -1,0 +1,36 @@
+alias dps="docker ps"
+alias di="docker images"
+alias dr="docker run"
+alias drt="docker run --rm -i -t"
+alias dcu=docker-cleanup
+alias dcui=docker-cleanupi
+alias dm=docker-machine
+alias dc=docker-compose
+
+# Docker
+alias d='docker'
+alias dstats='d stats -a --no-stream'
+alias dimgs='d images'
+alias drm='d rm -v'
+alias drmi='d rmi'
+alias dstop='d stop'
+alias dlogs='d logs -f'
+alias dps='d ps -a --format "table{{.Names}}\t{{.Image}}\t{{.Status}}\t{{.RunningFor}}"'
+alias dpull='d pull'
+alias drun='d run -d'
+alias dit='d exec -it'
+alias dzerofill='d system prune -a'
+alias removeuntagged='drmi -f $(dimgs | grep "^<none>" | awk "{print $3}")'
+alias removecontainer='d rm $(d ps --all -q -f status=exited)'
+alias removeimages='drmi $(dimgs -q -a) -f'
+alias removealldocker='d rm -f $(d ps -q -a)'
+​
+# DOCKER COMPOSE
+alias dc='docker-compose'
+alias dclog='dc logs'
+alias dcrm='dc rm'
+alias dcstop='dc stop'
+alias dcup='dc up'
+alias dcbuild='dc up --build'
+alias dcres='dc restart'
+alias dcrun='dc run --rm'
