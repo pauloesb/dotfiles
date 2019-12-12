@@ -20,7 +20,6 @@ docker-vars() {
   done < "$1"
 }
 
-# Normally docker is aliased to this, for now it's disabled with new Docker.app
 docker-env() {
   if [[ -z "$DOCKER_HOST" ]]; then
     eval $(docker-machine env dockerhost)
@@ -31,12 +30,9 @@ docker-env() {
 bashof(){
    dcrun "$1" $2
 }
-​
 rubycopof(){
    dcrun "$@" bundle exec rubocop -D
 }
-​
-​
 cleandocker(){
    IMAGESINFO=$(docker images --no-trunc --format '{{.ID}} {{.Repository}} {{.Tag}} {{.CreatedSince}}' | grep -E " (weeks|months|years)")
    TAGS=$(echo "$IMAGESINFO" | awk '{ print $2 ":" $3 }' )
@@ -49,13 +45,11 @@ cleandocker(){
    
    echo "Done!"
 }
-​
 gpurm(){
    grup -p
    git pull --rebase upstream master
    gloga
 }
-​
 logsfor() {
    d logs -f $1
 }

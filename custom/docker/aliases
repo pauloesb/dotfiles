@@ -6,8 +6,6 @@ alias dcu=docker-cleanup
 alias dcui=docker-cleanupi
 alias dm=docker-machine
 alias dc=docker-compose
-
-# Docker
 alias d='docker'
 alias dstats='d stats -a --no-stream'
 alias dimgs='d images'
@@ -24,8 +22,6 @@ alias removeuntagged='drmi -f $(dimgs | grep "^<none>" | awk "{print $3}")'
 alias removecontainer='d rm $(d ps --all -q -f status=exited)'
 alias removeimages='drmi $(dimgs -q -a) -f'
 alias removealldocker='d rm -f $(d ps -q -a)'
-​
-# DOCKER COMPOSE
 alias dclog='dc logs'
 alias dcrm='dc rm'
 alias dcstop='dc stop'
