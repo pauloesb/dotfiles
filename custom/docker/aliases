@@ -26,7 +26,6 @@ alias removeimages='drmi $(dimgs -q -a) -f'
 alias removealldocker='d rm -f $(d ps -q -a)'
 ​
 # DOCKER COMPOSE
-alias dc='docker-compose'
 alias dclog='dc logs'
 alias dcrm='dc rm'
 alias dcstop='dc stop'

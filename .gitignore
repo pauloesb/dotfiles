@@ -2,3 +2,5 @@
 cache/
 log/
 *.swp
+
+/custom/vim/vim.symlink/bundle
